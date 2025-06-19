@@ -1,11 +1,11 @@
 const scenes = [
-  { id: 'flower-shower', wait: 3000 },
-  { id: 'scene-text',    wait: 2000, text: 'Chitti chandamama ki oka chinna bday gift.' },
-  { id: 'scene-bouquet', wait: 2000 },
-  { id: 'scene-seq',     wait: 2500, img: 'assets/2.png', text: 'Manchiga thini, bajjo! Always be happy, no matter what!' },
-  { id: 'scene-seq',     wait: 2500, img: 'assets/3.png', text: 'Nee life lo vachey hurdles ni Kummesey, thaggedheley ❤️‍🔥' },
-  { id: 'scene-seq',     wait: 2500, img: 'assets/1.jpg', text: 'Happiest Birthday Botuuu 🌝' },
-  { id: 'scene-moon',    wait: 2000 }
+  { id: 'flower-shower', wait: 4000 },
+  { id: 'scene-text',    wait: 3000, text: 'Chitti chandamama ki oka chinna bday gift.' },
+  { id: 'scene-bouquet', wait: 3000 },
+  { id: 'scene-seq',     wait: 4000, img: 'assets/2.png', text: 'Manchiga thini, bajjo! Always be happy, no matter what!' },
+  { id: 'scene-seq',     wait: 4000, img: 'assets/3.png', text: 'Nee life lo vachey hurdles ni Kummesey, thaggedheley ❤️‍🔥' },
+  { id: 'scene-seq',     wait: 4000, img: 'assets/1.jpg', text: 'Happiest Birthday Botuuu 🌝' },
+  { id: 'scene-moon',    wait: 4000 }
 ];
 
 let elapsed = 0;
