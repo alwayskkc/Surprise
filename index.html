@@ -4,13 +4,24 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Birthday Surprise</title>
+  <!-- Lottie player for vector animation -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div id="container">
 
-    <!-- 1) Flower shower -->
-    <div id="flower-shower" class="scene"></div>
+    <!-- 1) Flower shower via Lottie -->
+    <div id="flower-shower" class="scene">
+      <lottie-player
+        src="assets/flowers.json"
+        background="transparent"
+        speed="1"
+        style="width: 100%; height: 100%;"
+        loop
+        autoplay>
+      </lottie-player>
+    </div>
 
     <!-- 2) Intro text -->
     <div id="scene-text" class="scene heading-lg text-md"></div>

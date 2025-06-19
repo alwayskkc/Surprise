@@ -87,7 +87,7 @@ body {
   #container { padding: var(--space-lg); }
 }
 
-/* Flower shower GIF */
+/* Removed GIF background; Lottie will handle the flower shower */
 #flower-shower {
-  background: url('https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif') center/cover no-repeat;
+  background: none;
 }

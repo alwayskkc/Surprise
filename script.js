@@ -5,12 +5,13 @@ const scenes = [
   { id: 'scene-seq',     wait: 4000, img: 'assets/2.png', text: 'Manchiga thini, bajjo! Always be happy, no matter what!' },
   { id: 'scene-seq',     wait: 4000, img: 'assets/3.png', text: 'Nee life lo vachey hurdles ni Kummesey, thaggedheley ❤️‍🔥' },
   { id: 'scene-seq',     wait: 4000, img: 'assets/1.jpg', text: 'Happiest Birthday Botuuu 🌝' },
-  { id: 'scene-moon',    wait: 4000 }
+  { id: 'scene-moon',    wait: 3000 }
 ];
 
 let elapsed = 0;
 scenes.forEach((s, i) => {
   setTimeout(() => {
+    // hide previous
     if (i > 0) document.getElementById(scenes[i - 1].id).classList.remove('show');
 
     const container = document.getElementById(s.id);
@@ -26,7 +27,9 @@ scenes.forEach((s, i) => {
         imgEl.classList.add('show');
       }, 50);
     } else {
-      if (s.text && s.id === 'scene-text') container.textContent = s.text;
+      if (s.text && s.id === 'scene-text') {
+        container.textContent = s.text;
+      }
       container.classList.add('show');
     }
 
