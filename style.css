@@ -1,15 +1,13 @@
 :root {
   --font-primary: 'Happy Monkey', cursive, system-ui, -apple-system, BlinkMacSystemFont,
                    "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji";
-  --color-text: #111;
   --color-bg: #fff;
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --color-text: #111;
   --transition-duration: 0.8s;
-  --transition-ease: var(--ease);
-  --fs-lg: clamp(1.5rem, 6vw, 2.5rem);
-  --fs-md: clamp(1.125rem, 4vw, 1.75rem);
+  --transition-ease: cubic-bezier(0.22,1,0.36,1);
+  --fs-lg: clamp(1.5rem,6vw,2.5rem);
+  --fs-md: clamp(1.125rem,4vw,1.75rem);
   --space-md: 1rem;
-  --space-lg: 2rem;
 }
 
 * {
@@ -44,14 +42,17 @@ body {
   position: absolute;
   inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity var(--transition-duration) var(--transition-ease),
-              transform var(--transition-duration) var(--transition-ease);
+  transition:
+    opacity var(--transition-duration) var(--transition-ease),
+    transform var(--transition-duration) var(--transition-ease);
   padding: var(--space-md);
 }
+
 .scene.show {
   opacity: 1;
   transform: translateY(0);
@@ -71,12 +72,14 @@ body {
   margin-bottom: var(--space-md);
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
   opacity: 0;
   transform: scale(0.95);
-  transition: opacity var(--transition-duration) var(--transition-ease),
-              transform var(--transition-duration) var(--transition-ease);
+  transition:
+    opacity var(--transition-duration) var(--transition-ease),
+    transform var(--transition-duration) var(--transition-ease);
 }
+
 .image-card.show {
   opacity: 1;
   transform: scale(1);
@@ -88,30 +91,8 @@ body {
   margin-bottom: var(--space-md);
 }
 
+/* tsParticles should draw on this container */
 #flower-shower {
   background: none;
-}
-
-@media (min-width: 1024px) {
-  /* Text scenes on right half */
-  #scene-text.show,
-  #scene-bouquet.show {
-    left: 50%;
-    width: 50%;
-    align-items: center;
-    justify-content: center;
-  }
-  /* Sequence: image left, text right */
-  #scene-seq.show {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: var(--space-lg);
-  }
-  #seq-img {
-    margin: auto;
-  }
-  #seq-text {
-    width: 45%;
-    text-align: left;
-  }
+  pointer-events: none;
 }

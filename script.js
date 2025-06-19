@@ -1,13 +1,36 @@
-// Typing effect utility
+// initialize tsParticles for falling petals
+tsParticles.load('flower-shower', {
+  fpsLimit: 60,
+  particles: {
+    number: { value: 80, density: { enable: false } },
+    shape: {
+      type: 'image',
+      image: {
+        src: 'assets/petal.png', // add a transparent petal PNG here
+        width: 32,
+        height: 32
+      }
+    },
+    gravity: { enable: true, acceleration: 0.15 },
+    move: {
+      direction: 'bottom',
+      enable: true,
+      outModes: { default: 'out' },
+      speed: { min: 1, max: 3 }
+    },
+    size: { value: { min: 16, max: 32 } },
+    opacity: { value: { min: 0.5, max: 1 } }
+  },
+  detectRetina: true
+});
+
+// typewriter helper
 function typeWriter(el, text, speed = 60) {
   el.textContent = '';
   let i = 0;
   const iv = setInterval(() => {
-    if (i < text.length) {
-      el.textContent += text.charAt(i++);
-    } else {
-      clearInterval(iv);
-    }
+    if (i < text.length) el.textContent += text.charAt(i++);
+    else clearInterval(iv);
   }, speed);
 }
 
@@ -24,9 +47,8 @@ const scenes = [
 let elapsed = 0;
 scenes.forEach((s, i) => {
   setTimeout(() => {
-    if (i > 0) {
-      document.getElementById(scenes[i - 1].id).classList.remove('show');
-    }
+    // hide previous
+    if (i > 0) document.getElementById(scenes[i - 1].id).classList.remove('show');
 
     const el = document.getElementById(s.id);
     el.classList.add('show');
@@ -44,5 +66,6 @@ scenes.forEach((s, i) => {
       }, 50);
     }
   }, elapsed);
+
   elapsed += s.wait;
 });

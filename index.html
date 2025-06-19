@@ -6,24 +6,15 @@
   <title>Birthday Surprise</title>
   <!-- Happy Monkey + emoji fallback -->
   <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
-  <!-- Lottie for vector animations -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- tsParticles for flower-petal effect -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.10.1/tsparticles.bundle.min.js"></script>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div id="container">
 
-    <!-- 1) Flower shower via local Lottie JSON -->
-    <div id="flower-shower" class="scene">
-      <lottie-player
-        src="assets/flowers.json"
-        background="transparent"
-        speed="1"
-        style="width: 100%; height: 100%;"
-        loop
-        autoplay>
-      </lottie-player>
-    </div>
+    <!-- 1) Flower-petal shower via tsParticles -->
+    <div id="flower-shower" class="scene"></div>
 
     <!-- 2) Intro text -->
     <div id="scene-text" class="scene heading-lg text-md"></div>
