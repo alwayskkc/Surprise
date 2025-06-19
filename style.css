@@ -87,7 +87,7 @@ body {
   #container { padding: var(--space-lg); }
 }
 
-/* Removed GIF background; Lottie will handle the flower shower */
+/* Clear out any GIF background */
 #flower-shower {
   background: none;
 }
