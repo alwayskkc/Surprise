@@ -1,0 +1,93 @@
+:root {
+  /* DESIGN TOKENS */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --color-text: #111;
+  --color-bg: #fff;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: 0.8s var(--ease);
+
+  /* FLUID TYPE */
+  --fs-xl: clamp(2rem, 8vw, 3.5rem);
+  --fs-lg: clamp(1.5rem, 6vw, 2.5rem);
+  --fs-md: clamp(1.125rem, 4vw, 1.75rem);
+  --fs-sm: clamp(1rem, 3vw, 1.25rem);
+
+  /* SPACING */
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+}
+
+/* Reset & base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; }
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+#container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition), transform var(--transition);
+  padding: var(--space-md);
+}
+
+.scene.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heading-xl { font-size: var(--fs-xl); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-md); }
+.heading-lg { font-size: var(--fs-lg); font-weight: 600; margin-bottom: var(--space-sm); }
+.text-md    { font-size: var(--fs-md); font-weight: 400; }
+
+.image-card {
+  max-width: 80%;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  margin-bottom: var(--space-md);
+  transform: scale(0.95);
+  transition: transform var(--transition), opacity var(--transition);
+  opacity: 0;
+}
+.image-card.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.icon {
+  width: 20vw;
+  max-width: 150px;
+  margin-bottom: var(--space-sm);
+}
+
+@media (min-width: 600px) {
+  #container { padding: var(--space-lg); }
+}
+
+/* Flower shower GIF */
+#flower-shower {
+  background: url('https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif') center/cover no-repeat;
+}
