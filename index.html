@@ -4,16 +4,16 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Birthday Surprise</title>
-  <!-- Happy Monkey font -->
+  <!-- Happy Monkey + emoji fallback -->
   <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
-  <!-- Lottie for vector animation -->
+  <!-- Lottie for vector animations -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div id="container">
 
-    <!-- 1) Flower shower via Lottie -->
+    <!-- 1) Flower shower via local Lottie JSON -->
     <div id="flower-shower" class="scene">
       <lottie-player
         src="assets/flowers.json"
@@ -28,19 +28,19 @@
     <!-- 2) Intro text -->
     <div id="scene-text" class="scene heading-lg text-md"></div>
 
-    <!-- 3) Bouquet + birthday -->
+    <!-- 3) Bouquet + birthday greeting -->
     <div id="scene-bouquet" class="scene">
       <img src="assets/bouquet.png" class="icon" alt="Bouquet"/>
       <div class="heading-lg">Happy 26th Birthday!</div>
     </div>
 
-    <!-- 4–6) Image sequence -->
+    <!-- 4–6) Image + typewriter sequence -->
     <div id="scene-seq" class="scene">
       <img id="seq-img" class="image-card" alt=""/>
       <div id="seq-text" class="text-md"></div>
     </div>
 
-    <!-- 7) Smiling moon -->
+    <!-- 7) Smiling moon sticker -->
     <div id="scene-moon" class="scene">
       <img src="assets/moon.png" class="icon" alt="Smiling Moon"/>
     </div>
